@@ -46,7 +46,9 @@ val EXPAND = mapOf(
 
   "regex_a" to "(?<!\\\\\\\\)\\\\{",
   "regex_b" to "(?s)(?<!\\\\\\\\)\\\\}(?!.*(?<!\\\\\\\\)\\\\})",
-  "regex_c" to "(?<!\\\\\\\\)_"
+  "regex_c" to "(?<!\\\\\\\\)_",
+  "regex_d" to "\\\\([{}_])",
+  "dollar" to "$"
 )
 
 tasks.register<Copy>("generateExpansionSource") {

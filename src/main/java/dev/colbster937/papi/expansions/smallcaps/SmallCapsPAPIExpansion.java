@@ -58,7 +58,8 @@ public class SmallCapsPAPIExpansion extends PlaceholderExpansion implements Conf
     out = out
         .replaceFirst("${regex_a}", "%")
         .replaceFirst("${regex_b}", "%")
-        .replaceAll("${regex_c}", " ");
+        .replaceAll("${regex_c}", " ")
+        .replaceAll("${regex_d}", "${dollar}1");
     if (out.contains("%"))
       out = PlaceholderAPI.setPlaceholders(plr, out);
     if (plr == null || (this.via.getPlayerVersion(plr) >= 393 && this.version_safe) || !this.version_safe)
