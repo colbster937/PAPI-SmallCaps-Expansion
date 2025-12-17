@@ -6,7 +6,7 @@ import org.gradle.language.jvm.tasks.ProcessResources
 
 val EXPANSION_ID = "smallcaps"
 val EXPANSION_NAME = "SmallCaps"
-val EXPANSION_VERSION = "1.0.1"
+val EXPANSION_VERSION = "1.0.2"
 val EXPANSION_DEPEND = "ViaVersion"
 val EXPANSION_AUTHOR = "Colbster937"
 val EXPANSION_BUKKIT_MAIN = "dev.colbster937.papi.expansions.smallcaps.SmallCapsBukkitPlugin"
