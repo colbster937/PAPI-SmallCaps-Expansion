@@ -13,11 +13,10 @@ import org.bukkit.OfflinePlayer;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.ViaAPI;
 
-
 @SuppressWarnings("unchecked")
 public class SmallCapsPAPIExpansion extends PlaceholderExpansion implements Configurable {
   private static final Map<String, Object> CONFIG_DEFAULTS = new HashMap<String, Object>();
-  
+
   private boolean version_safe;
   private ViaAPI<OfflinePlayer> via;
 
@@ -56,17 +55,15 @@ public class SmallCapsPAPIExpansion extends PlaceholderExpansion implements Conf
   @Override
   public String onRequest(OfflinePlayer plr, String str) {
     String out = str;
-    out = out.replaceAll("(?<!\\\\)_", " ");
-    out = replaceLast(out.replaceFirst(Pattern.quote("{"), "%"), "}", "%");
-    if (out.contains("%")) out = PlaceholderAPI.setPlaceholders(plr, out);
-    if (plr == null || (this.via.getPlayerVersion(plr) >= 393 && this.version_safe) || !this.version_safe) out = SmallCapsCharacterMap.string2SmallCaps(out);
+    out = out
+        .replaceFirst("(?<!\\\\)\\{", "%")
+        .replaceFirst("(?s)(?<!\\\\)\\}(?!.*(?<!\\\\)\\})", "%")
+        .replaceAll("(?<!\\\\)_", " ");
+    if (out.contains("%"))
+      out = PlaceholderAPI.setPlaceholders(plr, out);
+    if (plr == null || (this.via.getPlayerVersion(plr) >= 393 && this.version_safe) || !this.version_safe)
+      out = SmallCapsCharacterMap.string2SmallCaps(out);
     return out;
-  }
-  
-  private static String replaceLast(String s, String t, String r) {
-    int i = s.lastIndexOf(t);
-    if (i == -1) return s;
-    return s.substring(0, i) + r + s.substring(i + t.length());
   }
 
   static {
