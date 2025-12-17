@@ -13,11 +13,13 @@ import org.bukkit.OfflinePlayer;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.ViaAPI;
 
+
+@SuppressWarnings("unchecked")
 public class SmallCapsPAPIExpansion extends PlaceholderExpansion implements Configurable {
   private static final Map<String, Object> CONFIG_DEFAULTS = new HashMap<String, Object>();
   
   private boolean version_safe;
-  private ViaAPI via;
+  private ViaAPI<OfflinePlayer> via;
 
   @Override
   public String getIdentifier() {
@@ -42,7 +44,7 @@ public class SmallCapsPAPIExpansion extends PlaceholderExpansion implements Conf
   @Override
   public boolean register() {
     this.version_safe = this.getBoolean("version_safe", (boolean) CONFIG_DEFAULTS.get("version_safe"));
-    this.via = Via.getAPI();
+    this.via = (ViaAPI<OfflinePlayer>) Via.getAPI();
     return super.register();
   }
 
