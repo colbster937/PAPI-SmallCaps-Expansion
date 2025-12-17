@@ -4,3 +4,4 @@ author: ${expansion_author}
 folia-supported: true
 depend:
   - PlaceholderAPI
+  - ${expansion_depend}
