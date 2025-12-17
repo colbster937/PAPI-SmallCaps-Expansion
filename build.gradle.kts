@@ -42,7 +42,11 @@ val EXPAND = mapOf(
   "expansion_version" to EXPANSION_VERSION,
   "expansion_depend" to EXPANSION_DEPEND,
   "expansion_author" to EXPANSION_AUTHOR,
-  "expansion_bukkit_main" to EXPANSION_BUKKIT_MAIN
+  "expansion_bukkit_main" to EXPANSION_BUKKIT_MAIN,
+
+  "regex_a" to "(?<!\\\\\\\\)\\\\{",
+  "regex_b" to "(?s)(?<!\\\\\\\\)\\\\}(?!.*(?<!\\\\\\\\)\\\\})",
+  "regex_c" to "(?<!\\\\\\\\)_"
 )
 
 tasks.register<Copy>("generateExpansionSource") {

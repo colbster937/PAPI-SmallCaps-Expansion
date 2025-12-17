@@ -56,9 +56,9 @@ public class SmallCapsPAPIExpansion extends PlaceholderExpansion implements Conf
   public String onRequest(OfflinePlayer plr, String str) {
     String out = str;
     out = out
-        .replaceFirst("(?<!\\\\)\\{", "%")
-        .replaceFirst("(?s)(?<!\\\\)\\}(?!.*(?<!\\\\)\\})", "%")
-        .replaceAll("(?<!\\\\)_", " ");
+        .replaceFirst("${regex_a}", "%")
+        .replaceFirst("${regex_b}", "%")
+        .replaceAll("${regex_c}", " ");
     if (out.contains("%"))
       out = PlaceholderAPI.setPlaceholders(plr, out);
     if (plr == null || (this.via.getPlayerVersion(plr) >= 393 && this.version_safe) || !this.version_safe)
