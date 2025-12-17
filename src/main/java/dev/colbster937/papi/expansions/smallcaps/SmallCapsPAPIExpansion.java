@@ -13,7 +13,7 @@ import org.bukkit.OfflinePlayer;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.ViaAPI;
 
-public class SmallCapsExpansion extends PlaceholderExpansion implements Configurable {
+public class SmallCapsPAPIExpansion extends PlaceholderExpansion implements Configurable {
   private static final Map<String, Object> CONFIG_DEFAULTS = new HashMap<String, Object>();
   
   private boolean version_safe;

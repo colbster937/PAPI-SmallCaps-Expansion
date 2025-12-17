@@ -9,6 +9,7 @@ val EXPANSION_NAME = "SmallCaps"
 val EXPANSION_VERSION = "1.0.0"
 val EXPANSION_DEPEND = "ViaVersion"
 val EXPANSION_AUTHOR = "Colbster937"
+val EXPANSION_BUKKIT_MAIN = "dev.colbster937.papi.expansions.smallcaps.SmallCapsBukkitPlugin"
 
 
 
@@ -41,12 +42,13 @@ val EXPAND = mapOf(
   "expansion_version" to EXPANSION_VERSION,
   "expansion_depend" to EXPANSION_DEPEND,
   "expansion_author" to EXPANSION_AUTHOR
+  "expansion_bukkit_main" to EXPANSION_BUKKIT_MAIN,
 )
 
 tasks.register<Copy>("generateExpansionSource") {
   from("./src/main/java")
   into(layout.buildDirectory.dir("generated/sources/expansion/main"))
-  include("**/${EXPANSION_NAME}Expansion.java")
+  include("**/${EXPANSION_NAME}PAPIExpansion.java")
   expand(EXPAND)
 }
 
@@ -66,10 +68,10 @@ tasks.named<JavaCompile>("compileJava") {
 
   source =
     fileTree("./src/main/java") {
-      exclude("**/${EXPANSION_NAME}Expansion.java")
+      exclude("**/${EXPANSION_NAME}PAPIExpansion.java")
     } +
     fileTree(layout.buildDirectory.dir("generated/sources/expansion/main")) {
-      include("**/${EXPANSION_NAME}Expansion.java")
+      include("**/${EXPANSION_NAME}PAPIExpansion.java")
     }
 }
 

@@ -1,0 +1,6 @@
+name: ${expansion_id}
+main: ${expansion_bukkit_main}
+author: ${expansion_author}
+folia-supported: true
+depend:
+  - PlaceholderAPI
