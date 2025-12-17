@@ -41,8 +41,8 @@ val EXPAND = mapOf(
   "expansion_name" to EXPANSION_NAME,
   "expansion_version" to EXPANSION_VERSION,
   "expansion_depend" to EXPANSION_DEPEND,
-  "expansion_author" to EXPANSION_AUTHOR
-  "expansion_bukkit_main" to EXPANSION_BUKKIT_MAIN,
+  "expansion_author" to EXPANSION_AUTHOR,
+  "expansion_bukkit_main" to EXPANSION_BUKKIT_MAIN
 )
 
 tasks.register<Copy>("generateExpansionSource") {
