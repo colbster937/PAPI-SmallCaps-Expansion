@@ -24,17 +24,13 @@ public class SmallCapsCharacterMap {
 
   public static String string2SmallCaps(String s) {
     StringBuilder o = new StringBuilder(s.length());
-    for (char c : s.toCharArray()) {
-      o.append(char2SmallCaps(c));
-    }
+    for (char c : s.toCharArray()) o.append(char2SmallCaps(c));
     return o.toString();
   }
 
   public static String smallCaps2String(String s) {
     StringBuilder o = new StringBuilder(s.length());
-    for (char c : s.toCharArray()) {
-      o.append(smallCaps2Char(c));
-    }
+    for (char c : s.toCharArray()) o.append(smallCaps2Char(c));
     return o.toString();
   }
 
